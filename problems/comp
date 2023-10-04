@@ -1,8 +1,8 @@
 #!/usr/bin/bash
 if [[ $1 == *.py ]]; then 
-    python3 $1 < 1
+    time python3 $1 < 1
 elif [[ $1 == *.cpp ]]; then
-    g++ $1 -o exe && ./exe < 1 
+    g++ $1 -o exe && time ./exe < 1 
 else
-    g++ $1.cpp -o exe && ./exe < 1 
+    g++ $1.cpp -o exe && time ./exe < 1 
 fi
