@@ -1,2 +1,0 @@
-#!/usr/bin/bash
-g++ $1.cpp -DEBUG -o exe && ./exe < 1 

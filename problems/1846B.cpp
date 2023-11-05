@@ -12,21 +12,39 @@ using Vl = vector<ll>;
  
 	#define bugV(V) { cout << "*** "; for( auto v:V) cout << v << " ";\
                       cout << '\n' << flush; }
+	#define bugR(V) { cout << "*** "; for( auto v:V) cout << v.first << ':' << v.second << " ";\
+                      cout << '\n' << flush; }
  
 	#define bugL() { cout << "----------\n"; }
 #else
 	#define bug(x) { ; }
 	#define bug2(x,y) { ; }
 	#define bugV(V) { ; }
+	#define bugP(V) { ; }
 	#define bugL() { ; }
 #endif
  
 #define all(v) v.begin(), v.end()
  
+
 void solve(){
-	ll n; 
-    cin >>n;
-	vector<ll> arr(n); for( auto &it: arr) cin >> it;
+	vector<string> a(3);
+	for(auto &s: a)
+		cin >> s;
+	for(int i = 0; i < 3; i++){
+		if((a[i][0] == a[i][1] and a[i][0] == a[i][2]) 
+			or (a[0][i] == a[1][i] and a[0][i] == a[2][i]))
+			if(a[i][i] != '.' ){
+				cout << a[i][i] << '\n';
+				return;
+			}
+	}
+	if((a[0][0] == a[1][1] and a[2][2] == a[1][1]) or (a[0][2] == a[1][1] and a[2][0] == a[1][1]))
+		if(a[1][1] != '.'){
+			cout << a[1][1] << '\n';
+			return;
+		}
+	cout << "DRAW\n";
 }
  
 int main(){
