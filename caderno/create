@@ -1,8 +1,0 @@
-#!/usr/bin/bash
-if [[ $1 == *.py ]]; then
-    cp template.py $1 && nvim $1
-elif [[ $1 == *.cpp ]]; then
-    cp template.cpp $1 && nvim $1
-else
-    cp template.cpp $1.cpp && nvim $1.cpp
-fi
